@@ -420,35 +420,35 @@ final class RectorConfigBuilder
         bool $sensiolabs = false,
         bool $all = false
     ): self {
-        if ($symfony || $all) {
+        if ($symfony || ($all && $symfony !== false)) {
             $this->sets[] = SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES;
         }
 
-        if ($doctrine || $all) {
+        if ($doctrine || ($all && $doctrine !== false)) {
             $this->sets[] = DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES;
         }
 
-        if ($mongoDb || $all) {
+        if ($mongoDb || ($all && $mongoDb !== false)) {
             $this->sets[] = DoctrineSetList::MONGODB__ANNOTATIONS_TO_ATTRIBUTES;
         }
 
-        if ($gedmo || $all) {
+        if ($gedmo || ($all && $gedmo !== false)) {
             $this->sets[] = DoctrineSetList::GEDMO_ANNOTATIONS_TO_ATTRIBUTES;
         }
 
-        if ($phpunit || $all) {
+        if ($phpunit || ($all && $phpunit !== false)) {
             $this->sets[] = PHPUnitSetList::ANNOTATIONS_TO_ATTRIBUTES;
         }
 
-        if ($fosRest || $all) {
+        if ($fosRest || ($all && $fosRest !== false)) {
             $this->sets[] = FOSRestSetList::ANNOTATIONS_TO_ATTRIBUTES;
         }
 
-        if ($jms || $all) {
+        if ($jms || ($all && $jms !== false)) {
             $this->sets[] = JMSSetList::ANNOTATIONS_TO_ATTRIBUTES;
         }
 
-        if ($sensiolabs || $all) {
+        if ($sensiolabs || ($all && $sensiolabs !== false)) {
             $this->sets[] = SensiolabsSetList::ANNOTATIONS_TO_ATTRIBUTES;
         }
 
